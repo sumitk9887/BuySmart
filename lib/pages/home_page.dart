@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_catalog/widgets/drawer.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -6,15 +7,16 @@ class HomePage extends StatelessWidget {
     int x = 1;
     String name = "Sumit";
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: Scaffold(
-      appBar: AppBar(
-        title: Text("Catalog App"),
-      ),
-      body: Center(
-          child: Container(
-        child: Text("$name is making his $x Flutter Program"),
-      )),
-      drawer: Drawer(),
-    ));
+          appBar: AppBar(
+            title: Text("Catalog App"),
+          ),
+          body: Center(
+              child: Container(
+            child: Text("$name is making his $x Flutter Program"),
+          )),
+          drawer: MyDrawer(),
+        ));
   }
 }
