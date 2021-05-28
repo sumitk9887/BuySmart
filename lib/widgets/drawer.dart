@@ -5,8 +5,8 @@ class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      
       child: Container(
-        color: Colors.deepPurple,
         child: ListView(
           children: [
             DrawerHeader(
@@ -35,7 +35,7 @@ class MyDrawer extends StatelessWidget {
                 color: Colors.white,
               ),
               title: Text(
-                "Mail Me",
+                "Mail",
                 style: TextStyle(color: Colors.white),
               ),
             ),
@@ -45,7 +45,7 @@ class MyDrawer extends StatelessWidget {
                 color: Colors.white,
               ),
               title: Text(
-                "Contact Me",
+                "Contact",
                 style: TextStyle(color: Colors.white),
               ),
             )

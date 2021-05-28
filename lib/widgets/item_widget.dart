@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/models/catalog.dart';
+import 'package:flutter_catalog/pages/home_detailPage.dart';
+import 'package:flutter_catalog/utils/routes.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class ItemWidget extends StatelessWidget {
   final Item item;
@@ -12,10 +15,22 @@ class ItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
+        contentPadding: EdgeInsets.all(8),
         onTap: () {
-          print("${item.name} pressed");
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => HomeDetailPage(item: item)));
         },
-        leading: Image.network(item.image),
+        leading: Container(
+          child: Hero(
+            tag: Key(
+              item.id.toString(),
+            ),
+            child: Image.network(item.image),
+          ),
+          width: 65,
+        ),
         title: Text(item.name),
         subtitle: Text(item.desc),
         trailing: Text(
@@ -26,7 +41,7 @@ class ItemWidget extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-      ),
+      ).p12(),
     );
   }
 }

@@ -29,6 +29,7 @@ class _HomePageState extends State<HomePage> {
     CatalogModel.items = List.from(productsData)
         .map<Item>((item) => Item.fromMap(item))
         .toList();
+
     setState(() {});
   }
 
@@ -36,6 +37,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text("Catalog App"),
       ),
       body: Padding(
@@ -45,6 +47,7 @@ class _HomePageState extends State<HomePage> {
                   itemCount: CatalogModel.items.length,
                   itemBuilder: (context, index) {
                     return ItemWidget(item: CatalogModel.items[index]);
+                    
                   },
                 )
               : Center(child: CircularProgressIndicator())),
