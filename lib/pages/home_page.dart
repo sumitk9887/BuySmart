@@ -58,9 +58,11 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: Padding(
+
           padding: const EdgeInsets.all(16),
           child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
               ? ListView.builder(
+                  
                   itemCount: CatalogModel.items.length,
                   itemBuilder: (context, index) {
                     return ItemWidget(item: CatalogModel.items[index]);

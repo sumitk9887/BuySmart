@@ -40,9 +40,9 @@ class _LoginPageState extends State<LoginPage> {
               Text(
                 "Welcome $user",
                 style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24,
-                ),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 24,
+                    color: context.accentColor),
               ),
               Padding(
                 padding:
