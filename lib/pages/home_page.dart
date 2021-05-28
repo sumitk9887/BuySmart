@@ -1,9 +1,15 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_catalog/models/catalog.dart';
+import 'package:flutter_catalog/pages/cart_page.dart';
+import 'package:flutter_catalog/utils/routes.dart';
 import 'package:flutter_catalog/widgets/drawer.dart';
 import 'package:flutter_catalog/widgets/item_widget.dart';
 import 'dart:convert';
+import 'package:velocity_x/velocity_x.dart';
+
+import 'package:flutter_catalog/widgets/themes.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -36,9 +42,20 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: context.canvasColor,
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.pushNamed(context, MyRoutes.cartRoute);
+          },
+          backgroundColor: context.theme.buttonColor,
+          child: Icon(CupertinoIcons.cart, color: Colors.white)),
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Catalog App"),
+        backgroundColor: Colors.transparent,
+        title: Text(
+          "Catalog App",
+          style: TextStyle(color: context.accentColor),
+        ),
       ),
       body: Padding(
           padding: const EdgeInsets.all(16),
@@ -47,7 +64,6 @@ class _HomePageState extends State<HomePage> {
                   itemCount: CatalogModel.items.length,
                   itemBuilder: (context, index) {
                     return ItemWidget(item: CatalogModel.items[index]);
-                    
                   },
                 )
               : Center(child: CircularProgressIndicator())),

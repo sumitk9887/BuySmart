@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:flutter_catalog/models/catalog.dart';
+import 'package:flutter_catalog/widgets/themes.dart';
 
 class HomeDetailPage extends StatelessWidget {
   final Item item;
@@ -12,9 +13,11 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: context.canvasColor,
       appBar: AppBar(
         centerTitle: true,
-        title: "Cart".text.make(),
+        title: "Details".text.color(context.accentColor).make(),
+        backgroundColor: Colors.transparent,
       ),
       body: SafeArea(
         child: Column(
@@ -30,7 +33,7 @@ class HomeDetailPage extends StatelessWidget {
                 height: 30.0,
                 child: Container(
                   width: context.screenWidth,
-                  color: Colors.white,
+                  color: context.cardColor,
                   child: Column(
                     children: [
                       item.name.text.xl3.bold.make(),
@@ -44,17 +47,19 @@ class HomeDetailPage extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           children: [
             "\$${item.price}".text.xl3.bold.red900.make(),
             ElevatedButton(
               style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all(context.theme.buttonColor),
                   shape: MaterialStateProperty.all(StadiumBorder())),
               onPressed: () {},
-              child: "Buy".text.xl2.bold.make(),
-            ).wh(100, 50)
+              child: "Add To Cart".text.bold.make(),
+            ).wh(120, 45)
           ],
         ).p12(),
       ),
