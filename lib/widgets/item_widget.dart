@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/models/catalog.dart';
 import 'package:flutter_catalog/pages/home_detailPage.dart';
-import 'package:flutter_catalog/utils/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
-import 'package:flutter_catalog/widgets/themes.dart';
 
 class ItemWidget extends StatelessWidget {
   final Item item;

@@ -1,7 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:flutter_catalog/models/catalog.dart';
-import 'package:flutter_catalog/widgets/themes.dart';
 import 'package:flutter_catalog/models/cart.dart';
 
 class HomeDetailPage extends StatelessWidget {
@@ -74,25 +74,28 @@ class _AddToCart extends StatefulWidget {
 }
 
 class __AddToCartState extends State<_AddToCart> {
-  bool isAdded = false;
+  final _cart = CartModel();
 
   @override
   Widget build(BuildContext context) {
+    bool isInCart = _cart.items.contains(widget.item) ?? false;
     return ElevatedButton(
       onPressed: () {
-        isAdded = isAdded.toggle();
-        final _catalog = CatalogModel();
-        final _cart = CartModel();
-        _cart.catalog = _catalog;
-        _cart.add(widget.item);
-        setState(() {});
+        if (!isInCart) {
+          isInCart = isInCart.toggle();
+          final _catalog = CatalogModel();
+          final _cart = CartModel();
+          _cart.catalog = _catalog;
+          _cart.add(widget.item);
+          setState(() {});
+        }
       },
       style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(context.theme.buttonColor),
           shape: MaterialStateProperty.all(
             StadiumBorder(),
           )),
-      child: isAdded ? Icon(Icons.done) : "Add to cart".text.make(),
+      child: isInCart ? Icon(Icons.done) : Icon(CupertinoIcons.cart_badge_plus),
     );
   }
 }
