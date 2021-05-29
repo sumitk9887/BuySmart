@@ -101,14 +101,35 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(
                     height: 30,
                   ),
-                  ElevatedButton(
-                      style: TextButton.styleFrom(
-                          minimumSize: Size(120, 45),
-                          backgroundColor: context.theme.buttonColor),
-                      onPressed: () {
-                        Navigator.pushNamed(context, MyRoutes.signupRoute);
-                      },
-                      child: Text("Sign Up"))
+                  Material(
+                    color: context.theme.buttonColor,
+                    borderRadius: BorderRadius.circular(8),
+                    child: InkWell(
+                      onTap: () =>
+                          Navigator.pushNamed(context, MyRoutes.signupRoute),
+                      child: AnimatedContainer(
+                        duration: Duration(seconds: 1),
+                        alignment: Alignment.center,
+                        width: 150,
+                        height: 50,
+                        child: Text(
+                          "Sign Up",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ),
+                  ),
+                  // ElevatedButton(
+                  //     style: TextButton.styleFrom(
+                  //         minimumSize: Size(120, 45),
+                  //         backgroundColor: context.theme.buttonColor),
+                  //     onPressed: () {
+                  //       Navigator.pushNamed(context, MyRoutes.signupRoute);
+                  //     },
+                  //     child: Text("Sign Up"))
                 ]),
               )
             ],
