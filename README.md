@@ -1,4 +1,4 @@
-# flutter_catalog
+# BuySmart
 
 A new Flutter project.
 
