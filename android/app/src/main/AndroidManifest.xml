@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.flutter_catalog">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="flutter_catalog"
+        android:label="BuySmart"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
