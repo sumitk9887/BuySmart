@@ -73,7 +73,6 @@ class _LoginPageState extends State<LoginPage> {
                     },
                   ),
                   SizedBox(height: 40),
-
                   Material(
                     color: context.theme.buttonColor,
                     borderRadius: BorderRadius.circular(changeButton ? 50 : 8),
@@ -98,14 +97,18 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                       ),
                     ),
-                  )
-
-                  // ElevatedButton(
-                  //     style: TextButton.styleFrom(minimumSize: Size(120, 45)),
-                  //     onPressed: () {
-                  //       Navigator.pushNamed(context, MyRoutes.homeRoute);
-                  //     },
-                  //     child: Text("Login"))
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  ElevatedButton(
+                      style: TextButton.styleFrom(
+                          minimumSize: Size(120, 45),
+                          backgroundColor: context.theme.buttonColor),
+                      onPressed: () {
+                        Navigator.pushNamed(context, MyRoutes.signupRoute);
+                      },
+                      child: Text("Sign Up"))
                 ]),
               )
             ],
