@@ -116,7 +116,7 @@ class SignUpPage extends StatelessWidget {
                       width: 150,
                       height: 50,
                       child: Text(
-                        "Login",
+                        "Sign Up",
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 18,
