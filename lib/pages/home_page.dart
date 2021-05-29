@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         backgroundColor: Colors.transparent,
         title: Text(
-          "Catalog App",
+          "BuySmart",
           style: TextStyle(color: context.accentColor),
         ),
       ),
