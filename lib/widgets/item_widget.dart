@@ -29,7 +29,6 @@ class ItemWidget extends StatelessWidget {
               ),
               child: Image.network(item.image),
             ),
-            width: 90,
           ),
           title: Text(item.name),
           subtitle: Text(item.desc),
@@ -41,7 +40,7 @@ class ItemWidget extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-        ).p12(),
+        ).p24(),
       ),
     );
   }
