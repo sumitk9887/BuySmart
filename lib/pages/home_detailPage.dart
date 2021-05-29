@@ -61,24 +61,19 @@ class HomeDetailPage extends StatelessWidget {
   }
 }
 
-class _AddToCart extends StatefulWidget {
+class _AddToCart extends StatelessWidget {
   final Item item;
 
-  const _AddToCart({
+  _AddToCart({
     Key key,
     this.item,
   }) : super(key: key);
 
-  @override
-  __AddToCartState createState() => __AddToCartState();
-}
-
-class __AddToCartState extends State<_AddToCart> {
   final _cart = CartModel();
 
   @override
   Widget build(BuildContext context) {
-    bool isInCart = _cart.items.contains(widget.item) ?? false;
+    bool isInCart = _cart.items.contains(item) ?? false;
     return ElevatedButton(
       onPressed: () {
         if (!isInCart) {
@@ -86,8 +81,7 @@ class __AddToCartState extends State<_AddToCart> {
           final _catalog = CatalogModel();
           final _cart = CartModel();
           _cart.catalog = _catalog;
-          _cart.add(widget.item);
-          setState(() {});
+          _cart.add(item);
         }
       },
       style: ButtonStyle(
