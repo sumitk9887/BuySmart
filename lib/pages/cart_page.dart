@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_catalog/core/store.dart';
 import 'package:flutter_catalog/models/cart.dart';
 import 'package:velocity_x/velocity_x.dart';
+import 'package:pay/pay.dart';
 
 class CartPage extends StatelessWidget {
   @override
@@ -24,6 +25,8 @@ class CartPage extends StatelessWidget {
 }
 
 class _CartTotal extends StatelessWidget {
+  final _paymentItems = <PaymentItem>[];
+
   @override
   Widget build(BuildContext context) {
     final _cart = CartModel();
@@ -35,6 +38,11 @@ class _CartTotal extends StatelessWidget {
           VxBuilder(
             mutations: {RemoveMutation},
             builder: (context, _, __) {
+              _paymentItems.add(PaymentItem(
+                amount: _cart.totalPrice.toString(),
+                label: "Buy Smart Product",
+                status: PaymentItemStatus.final_price,
+              ));
               return "\$${_cart.totalPrice}"
                   .text
                   .xl5
@@ -43,17 +51,33 @@ class _CartTotal extends StatelessWidget {
             },
           ),
           30.widthBox,
-          ElevatedButton(
-            onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                content: "Buying not supported yet.".text.make(),
-              ));
-            },
-            style: ButtonStyle(
-                backgroundColor:
-                    MaterialStateProperty.all(context.theme.buttonColor)),
-            child: "Buy".text.white.make(),
-          ).w32(context).h8(context)
+          Vx.isAndroid
+              ? GooglePayButton(
+                  paymentConfigurationAsset: 'gpay.json',
+                  paymentItems: _paymentItems,
+                  style: GooglePayButtonStyle.black,
+                  type: GooglePayButtonType.pay,
+                  width: 150,
+                  height: 75,
+                  margin: const EdgeInsets.only(top: 15.0),
+                  onPaymentResult: (data) {
+                    print(data);
+                  },
+                  loadingIndicator: const Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                )
+              : ElevatedButton(
+                  onPressed: () {
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      content: "Buying not supported yet on Web.".text.make(),
+                    ));
+                  },
+                  style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all(context.theme.buttonColor)),
+                  child: "Buy".text.white.make(),
+                ).w32(context).h8(context)
         ],
       ),
     );
