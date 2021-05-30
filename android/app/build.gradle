@@ -34,7 +34,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "sumit.flutter_catalog"
+        applicationId "com.example.flutter_catalog"
         minSdkVersion 16
         targetSdkVersion 30
         versionCode 1
