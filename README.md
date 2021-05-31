@@ -6,7 +6,6 @@ An E-Commerce applcation developed on Flutter, which helps to run the app on And
   <img src="github_images/Light/1.png" width="155"><a > 
   <img src="github_images/Light/2.png" width="155"></a></a>
   <a> <img src="github_images/Light/3.png" width="155"></a>
-  <a > <img src="github_images/Light/4.png" width="155"></a>
   <a > <img src="github_images/Light/5.png" width="155"></a>
   <a > <img src="github_images/Light/6.png" width="155"></a>
 </p>
@@ -18,7 +17,6 @@ An E-Commerce applcation developed on Flutter, which helps to run the app on And
   <img src="github_images/Dark/1.png" width="155"><a > 
   <img src="github_images/Dark/2.png" width="155"></a></a>
   <a> <img src="github_images/Dark/3.png" width="155"></a>
-  <a > <img src="github_images/Dark/4.png" width="155"></a>
   <a > <img src="github_images/Dark/5.png" width="155"></a>
   <a > <img src="github_images/Dark/6.png" width="155"></a>
 </p>
