@@ -1,6 +1,6 @@
 # BuySmart
 An E-Commerce applcation developed on Flutter, which helps to run the app on Android / IOS / WindowsOS / MacOS / WebBrowser from a single codebase 
-# Light Mode
+## Light Mode
 <p float="left">
 <a> 
   <img src="github_images/Light/1.png" width="155"><a > 
@@ -10,7 +10,7 @@ An E-Commerce applcation developed on Flutter, which helps to run the app on And
   <a > <img src="github_images/Light/6.png" width="155"></a>
 </p>
 
-# Dark Mode
+## Dark Mode
 
 <p float="left">
 <a> 
@@ -21,6 +21,9 @@ An E-Commerce applcation developed on Flutter, which helps to run the app on And
   <a > <img src="github_images/Dark/6.png" width="155"></a>
 </p>
 
+## Web & Windows 
+<p float="left">
+ <a > <img src="github_images/Web_Windows/web.PNG" width="330" height="400"> </a> |  <a > <img src="github_images/Web_Windows/windows.PNG" width="330"></a> </p>
 
 
 ## [Download Apk File](https://drive.google.com/file/d/15S6JntTt96Wu1sHFABHAUnjlzuIncm3D/view?usp=sharing)
@@ -38,6 +41,8 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
+## Dependencies Used
+| [VelocityX](https://pub.dev/packages/velocity_x) | [Google Fonts](https://pub.dev/packages/google_fonts) | [pay](https://pub.dev/packages/pay) | [http](https://pub.dev/packages/http) |
 
 ## Project Created & Maintained By
 
