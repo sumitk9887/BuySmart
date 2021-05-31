@@ -1,6 +1,7 @@
 # BuySmart
 An E-Commerce application developed on Flutter, which helps to run the app on Android / IOS / Windows's OS / MacOS / Web Browser from a single codebase
-
+<p><a> <img src="https://media.giphy.com/media/8jhmYWtYs3gWo0hcgN/giphy.gif" ><a > 
+</p>
 ## Light Mode
 <p float="left">
 <a> 
